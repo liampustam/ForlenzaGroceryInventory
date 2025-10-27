@@ -21,6 +21,7 @@ def remove_item(inventory, item_name):
     """
     del inventory[item_name]
     print(f"{item_name} removed from the inventory.")
+    
 
 def update_quantity(inventory, item_name, new_quantity):
     """
@@ -31,7 +32,7 @@ def update_quantity(inventory, item_name, new_quantity):
     item_name (str): The name of the item to update
     new_quantity (str): The new quantity of the item
     """
-    inventory[item_name] == new_quantity
+    inventory[item_name] = new_quantity
     print(f"{item_name} quantity updated to {new_quantity}.")
 
 def display_inventory(inventory):
@@ -46,16 +47,19 @@ def display_inventory(inventory):
     else:
         print("Current Inventory:")
         for name in inventory:
-            quantity = inventory[name]
+            inventory[name] = update_quantity
             print(f"{name}: Quantity: {quantity}")
 
 # Initialize inventory with two example items
 inventory = {
-    "apple": 100,
-    "banana": 150
 }
 
 while True:
+    print()
+    print()
+    print()
+
+    display_inventory(inventory)
     print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
     choice = input("Enter your choice (1-5): ")
 
@@ -66,10 +70,11 @@ while True:
     elif choice == "2":
         name = input("Enter item name to remove: ")
         remove_item(inventory, name)
+        continue
     elif choice == "3":
         name = input("Enter item name to update: ")
-        quantity = input("Enter new quantity: ")
-        update_quantity(inventory, name, quantity)
+        new_quantity = int(input("Enter new quantity: "))
+        update_quantity(inventory, name, new_quantity)
     elif choice == "4":
         display_inventory(inventory)
     elif choice == "5":
