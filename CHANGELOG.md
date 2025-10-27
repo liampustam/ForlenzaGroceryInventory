@@ -14,4 +14,9 @@
   - View the current inventory.
   - Search for items by name.
 
+## Version 1.2
+-2025-10-27
+-Fixed the problem where the system crashes when trying to remove an item
+-Displays the current inventory at all times
+-
 
